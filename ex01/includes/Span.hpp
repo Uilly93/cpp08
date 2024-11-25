@@ -19,6 +19,7 @@ class Span {
 	int shortestSpan();
 	int longestSpan();
 	void addNumber(int nb);
+	void addManyNumbers(std::vector<int> &vec);
 
 	private:
 	Span();

@@ -38,6 +38,8 @@ Span &Span::operator=(const Span &src) {
 }
 // Methods
 int Span::shortestSpan() {
+	if (_tab.size() < 2)
+		throw std::invalid_argument("empty array");
 	std::sort(_tab.begin(), _tab.end());
 	int shortest = *(_tab.end() - 1);
 	for (std::vector<int>::iterator it = _tab.begin(); it != _tab.end() - 1; it++) {
@@ -49,6 +51,8 @@ int Span::shortestSpan() {
 }
 
 int Span::longestSpan() {
+	if (_tab.size() < 2)
+		throw std::invalid_argument("empty array");
 	std::sort(_tab.begin(), _tab.end());
 	int min = *_tab.begin();
 	int max = *(_tab.end() - 1);
@@ -57,11 +61,19 @@ int Span::longestSpan() {
 }
 
 void Span::addNumber(int nb) {
-	if (_size > 0) {
+	if (_tab.size() < _size) {
 		_tab.push_back(nb);
 		std::cout << NGREEN << nb << " added to list" << RESET << std::endl;
-		_size--;
 	} else {
 		throw std::invalid_argument("array is full");
 	}
+}
+
+void Span::addManyNumbers(std::vector<int> &vec) {
+	if (_size - _tab.size() < vec.size())
+		throw std::invalid_argument("not enough space to add Numbers");
+	_tab.insert(_tab.end(), vec.begin(), vec.end());
+	std::cout << NGREEN << "Array added:" << RESET << std::endl;
+	for (std::vector<int>::iterator it = vec.begin(); it != vec.end(); it++)
+		std::cout << GREEN << "[" << *it << "]" << RESET << std::endl;
 }
