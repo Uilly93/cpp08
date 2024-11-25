@@ -1,4 +1,5 @@
 #include "../includes/easyfind.hpp"
+#include "../includes/colors.hpp"
 #include <iostream>
 #include <list>
 #include <set>

@@ -1,9 +1,6 @@
 #ifndef EASYFIND_HPP
 #define EASYFIND_HPP
 
-#include "colors.hpp"
-#include <algorithm>
-#include <exception>
 #include <stdexcept>
 
 template <typename T>

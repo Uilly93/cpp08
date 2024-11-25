@@ -1,8 +1,6 @@
 #ifndef SPAN_HPP
 #define SPAN_HPP
 
-#include "colors.hpp"
-#include <iostream>
 #include <vector>
 
 class Span {

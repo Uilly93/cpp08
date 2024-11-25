@@ -1,5 +1,6 @@
 #include "../includes/Span.hpp"
 #include "../includes/colors.hpp"
+#include <iostream>
 
 int main() {
 	Span sp = Span(5);
@@ -10,7 +11,7 @@ int main() {
 		sp.addNumber(6);
 		sp.addNumber(11);
 
-		sp.addNumber(11); // throw exception
+		sp.addNumber(11); // throws exception
 		sp.addNumber(9);
 		sp.addNumber(17);
 	} catch (std::exception &e) {
@@ -20,7 +21,7 @@ int main() {
 	std::cout << sp.longestSpan() << std::endl;
 
 	try {
-		Span sp = Span(0); // throw exception
+		Span sp = Span(0); // throws exception
 		sp.addNumber(9);
 		sp.addNumber(3);
 		sp.addNumber(17);

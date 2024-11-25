@@ -1,9 +1,7 @@
 #ifndef MUTANTSTACK_HPP
 #define MUTANTSTACK_HPP
 
-#include "colors.hpp"
 #include <deque>
-#include <iostream>
 #include <stack>
 
 template <typename T, class It = std::deque<T> >

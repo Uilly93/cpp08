@@ -1,5 +1,6 @@
 #include "../includes/MutantStack.hpp"
 #include "../includes/colors.hpp"
+#include <iostream>
 #include <vector>
 
 int main() {
@@ -51,9 +52,11 @@ int main() {
 		std::cout << NPURPLE << "--------------------------------------------------------------"
 				  << RESET << std::endl;
 	}
-	std::cout << NPURPLE << "--------------------------------------------------------------" << RESET << std::endl;
+	std::cout << NPURPLE << "--------------------------------------------------------------"
+			  << RESET << std::endl;
 	std::cout << NGREEN << "testing same inputs with std::vector" << RESET << std::endl;
-	std::cout << NPURPLE << "--------------------------------------------------------------" << RESET << std::endl;
+	std::cout << NPURPLE << "--------------------------------------------------------------"
+			  << RESET << std::endl;
 	{
 		std::vector<int> mstack;
 		mstack.push_back(0);
@@ -87,7 +90,8 @@ int main() {
 		std::cout << NGREEN << "testing revers iterators" << RESET << std::endl;
 		std::cout << NPURPLE << "--------------------------------------------------------------"
 				  << RESET << std::endl;
-		for (std::vector<int>::reverse_iterator rev_it = mstack.rbegin(); rev_it != mstack.rend(); rev_it++)
+		for (std::vector<int>::reverse_iterator rev_it = mstack.rbegin(); rev_it != mstack.rend();
+			 rev_it++)
 			std::cout << NGREEN << "[" << *rev_it << "]" << RESET << std::endl;
 		std::cout << NPURPLE << "--------------------------------------------------------------"
 				  << RESET << std::endl;

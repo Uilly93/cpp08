@@ -1,6 +1,7 @@
 #include "../includes/Span.hpp"
 #include "../includes/colors.hpp"
 #include <algorithm>
+#include <iostream>
 #include <stdexcept>
 #include <vector>
 
@@ -10,7 +11,7 @@ Span::Span() : _tab() {
 	std::cout << GREEN << "Span Default Constructor called" << RESET << std::endl;
 }
 
-Span::Span(unsigned int N) :/*  _tab(),  */_size(N) {
+Span::Span(unsigned int N) : _size(N) {
 	if (N == 0)
 		throw std::invalid_argument("invalid argument");
 	_tab.reserve(N);
@@ -58,7 +59,7 @@ int Span::longestSpan() {
 void Span::addNumber(int nb) {
 	if (_size > 0) {
 		_tab.push_back(nb);
-		std::cout << NGREEN << nb <<" added to list" << RESET << std::endl;
+		std::cout << NGREEN << nb << " added to list" << RESET << std::endl;
 		_size--;
 	} else {
 		throw std::invalid_argument("array is full");
