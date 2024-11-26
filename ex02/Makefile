@@ -1,5 +1,5 @@
 NAME 		=	MutantStack
-CXX 		=	clang++
+CXX 		=	c++
 CPPFLAGS 	=	-Wall -Wextra -Werror -MMD -g3 -std=c++98
 SRC_PATH	=	src/
 OBJ_PATH	=	.obj/
