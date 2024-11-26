@@ -5,6 +5,16 @@
 #include <set>
 #include <vector>
 
+template <typename T>
+void find_position(T &container, int to_find) {
+	typename T::iterator founded = easyfind(container, to_find);
+	int i = 0;
+	for (typename T::iterator it = container.begin(); it != founded; it++)
+		i++;
+	std::cout << GREEN << "number: " << to_find << " founded at position " << i << RESET
+			  << std::endl;
+}
+
 int main(void) {
 	try {
 		std::vector<int> vec;
@@ -29,14 +39,10 @@ int main(void) {
 				  << RESET << std::endl;
 		int to_find = 40;
 		std::cout << NBLUE << "triyng to find " << to_find << RESET << std::endl;
-		std::vector<int>::iterator founded = easyfind(vec, to_find);
-		int i = 0;
-		for (std::vector<int>::iterator it = vec.begin(); it != founded; it++)
-			i++;
-		std::cout << GREEN << i << "th position" << RESET << std::endl;
+		find_position(vec, to_find);
 		to_find = 34;
 		std::cout << NBLUE << "triyng to find " << to_find << RESET << std::endl;
-		std::cout << GREEN << *easyfind(vec, to_find) << " position" << RESET << std::endl;
+		find_position(vec, to_find);
 	} catch (std::exception &e) {
 		std::cout << RED << e.what() << RESET << std::endl;
 	}
@@ -63,14 +69,10 @@ int main(void) {
 				  << RESET << std::endl;
 		int to_find = 100;
 		std::cout << NBLUE << "triyng to find " << to_find << RESET << std::endl;
-		std::list<int>::iterator founded = easyfind(vec, to_find);
-		int i = 0;
-		for (std::list<int>::iterator it = vec.begin(); it != founded; it++)
-			i++;
-		std::cout << GREEN << i << "st position" << RESET << std::endl;
+		find_position(vec, to_find);
 		to_find = 536;
 		std::cout << NBLUE << "triyng to find " << to_find << RESET << std::endl;
-		std::cout << GREEN << *easyfind(vec, to_find) << " position" << RESET << std::endl;
+		find_position(vec, to_find);
 	} catch (std::exception &e) {
 		std::cout << RED << e.what() << RESET << std::endl;
 	}
@@ -99,14 +101,10 @@ int main(void) {
 				  << std::endl;
 		int to_find = 9000;
 		std::cout << NBLUE << "triyng to find " << to_find << RESET << std::endl;
-		std::set<int>::iterator founded = easyfind(vec, to_find);
-		int i = 0;
-		for (std::set<int>::iterator it = vec.begin(); it != founded; it++)
-			i++;
-		std::cout << GREEN << i << "th position" << RESET << std::endl;
+		find_position(vec, to_find);
 		to_find = 12535;
 		std::cout << NBLUE << "triyng to find " << to_find << RESET << std::endl;
-		std::cout << GREEN << *easyfind(vec, to_find) << " position" << RESET << std::endl;
+		find_position(vec, to_find);
 	} catch (std::exception &e) {
 		std::cout << RED << e.what() << RESET << std::endl;
 	}
